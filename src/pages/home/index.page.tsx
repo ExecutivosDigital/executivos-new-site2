@@ -1,4 +1,4 @@
-import { Feedbacks } from "@/components/FeedBacks";
+import { Feedback } from "@/components/FeedBack";
 import { Element } from "react-scroll"; // Importe o Element do react-scroll
 import About from "../../components/About";
 import Contact from "../../components/Contact";
@@ -48,7 +48,7 @@ export default function Home() {
         <Element name="projetos">
           <Works />
         </Element>
-        <Feedbacks />
+        <Feedback />
         <div className="relative z-0">
           <Contact site="Home" />
           <StarsCanvas />
