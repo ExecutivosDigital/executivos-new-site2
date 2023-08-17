@@ -180,7 +180,7 @@ export default function Contract({ site }: Props) {
         animate={{ opacity: isEarthCanvasVisible ? 1 : 0 }}
         transition={{ duration: 3 }}
       >
-        <div ref={earthCanvasRef} className="xl:flex-1 xl:h-auto md:h-[450px] h-[450px] bottom-[100px] justify-center items-center">
+        <div ref={earthCanvasRef} className="  bottom-[100px] justify-center items-center" style={{height:'90%'}}>
           {isEarthCanvasVisible && <EarthCanvas />}
         </div>
       </motion.div>
