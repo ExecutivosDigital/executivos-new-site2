@@ -1,6 +1,6 @@
 import { addDoc, collection, getFirestore } from "firebase/firestore";
 import { motion } from "framer-motion";
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 import { Element } from "react-scroll";
 import { firebaseApp } from "../constants/firabase";
 import { slideIn } from "../utils/motion";
@@ -12,24 +12,6 @@ interface Props {
 }
 
 export default function Contract({ site }: Props) {
-  const styles = {
-    paddingX: "sm:px-16 px-6",
-    paddingY: "sm:py-16 py-6",
-    padding: "sm:px-16 px-6 sm:py-16 py-10",
-    heroHeadText:
-      "font-black text-white lg:text-[64px] sm:text-[55px] xs:text-[45px] text-[35px] lg:leading-[98px] mt-2",
-    heroSubText:
-      "text-[#dfd9ff] font-medium lg:text-[30px] sm:text-[26px] xs:text-[20px] text-[16px] lg:leading-[40px]",
-    sectionHeadText:
-      "text-white font-black md:text-[60px] sm:text-[50px] xs:text-[40px] text-[30px]",
-    sectionSubText:
-      "text-white sm:text-[18px] text-[14px] uppercase tracking-wider",
-    sectionHeadTextBlack:
-      "text-black Black font-black md:text-[60px] sm:text-[50px] xs:text-[40px] text-[30px]",
-    sectionSubTextBlack:
-      "sm:text-[18px] font-black text-[14px] text-black uppercase tracking-wider",
-  };
-
   const [message, setMessage] = useState("");
   const [name, setName] = useState("");
   const [whatsapp, setWhatsapp] = useState("");
@@ -42,14 +24,11 @@ export default function Contract({ site }: Props) {
   const userCollectionRef = collection(db, "dados");
   const email = "maysdsacosdsdn@2323.com";
   const [isFieldsValid, setIsFieldsValid] = useState(true);
-
   const [loading, setLoading] = useState(false);
   const [toolsModalShow, setToolsModalShow] = useState(false);
 
   const handleSend = async () => {
-    console.log("Antes de chamar handleSend");
     try {
-      console.log("Login efetuado com sucesso!");
       const data = await addDoc(userCollectionRef, {
         site,
         name,
@@ -57,8 +36,9 @@ export default function Contract({ site }: Props) {
         message,
         date,
       });
+      console.log("Dados adicionados com sucesso:", data);
     } catch (error: any) {
-      console.log(error.code);
+      console.log("Erro ao adicionar dados:", error);
     }
   };
 
@@ -86,10 +66,38 @@ export default function Contract({ site }: Props) {
     if (isFormValid()) {
       handleSend();
       window.alert(
-        `Obrigado ${name} \nNos recebemos sua mensagem e entraremos em contato em breve!`
+        `Obrigado ${name} \nRecebemos sua mensagem e entraremos em contato em breve!`
       );
     }
   };
+
+  const [isEarthCanvasVisible, setIsEarthCanvasVisible] = useState(false);
+
+  const earthCanvasRef = useRef(null);
+  const contactRef = useRef(null);
+
+  const handleIntersection = (entries:any) => {
+    const [entry] = entries;
+    setIsEarthCanvasVisible(entry.isIntersecting);
+  };
+
+  useEffect(() => {
+    const options = {
+      root: null,
+      rootMargin: "0px",
+      threshold: 0.5, // Ajuste conforme necessário
+    };
+
+    const observer = new IntersectionObserver(handleIntersection, options);
+
+    if (earthCanvasRef.current) {
+      observer.observe(earthCanvasRef.current);
+    }
+
+    return () => {
+      observer.disconnect();
+    };
+  }, []);
 
   return (
     <div
@@ -104,8 +112,8 @@ export default function Contract({ site }: Props) {
             open={toolsModalShow}
             close={() => setToolsModalShow(false)}
           />
-          <p className={styles.sectionSubTextBlack}>Fale Sobre seu</p>
-          <h3 className={styles.sectionHeadTextBlack}>Projeto</h3>
+          <p className={"text-black font-black md:text-[60px] sm:text-[50px] xs:text-[40px] text-[30px]"}>Fale Sobre seu</p>
+          <h3 className={"sm:text-[18px] font-black text-[14px] text-black uppercase tracking-wider"}>Projeto</h3>
 
           <div className="mt-12 flex flex-col gap-8">
             <label className="flex flex-col">
@@ -149,12 +157,12 @@ export default function Contract({ site }: Props) {
                 rows={7}
                 name="message"
                 onChange={(e) => setMessage(e.target.value)}
-                placeholder="Descreva aqui o projeto que voce quer tirar do papel e executar com a gente."
+                placeholder="Descreva aqui o projeto que você quer tirar do papel e executar conosco."
                 className="background-black py-4 px-6 placeholder: text-white rounded-lg outline-none border-none font-medium"
               />
             </label>
             <label style={{ height: "5px", alignSelf: "center", color: "red" }}>
-              {isFieldsValid ? "" : "*Preencha os campos acima Corretamente"}{" "}
+              {isFieldsValid ? "" : "*Preencha os campos acima corretamente"}{" "}
             </label>
             <button
               className="bg-black py-3 px-8 rounded-xl outline-none w-fit text-white font-bold shadow-md shadow-primary"
@@ -167,11 +175,16 @@ export default function Contract({ site }: Props) {
       </Element>
       <motion.div
         variants={slideIn("right", "tween", 0.2, 1)}
-        className="xl:flex-1 xl:h-auto md:h-[450px]  h-[450px] bottom-[100px] justify-center items-center"
+        className="xl:flex-1 xl:h-auto md:h-[450px] h-[450px] bottom-[100px] justify-center items-center"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: isEarthCanvasVisible ? 1 : 0 }}
+        transition={{ duration: 3 }}
       >
-        <EarthCanvas />
+        <div ref={earthCanvasRef} className="xl:flex-1 xl:h-auto md:h-[450px] h-[450px] bottom-[100px] justify-center items-center">
+          {isEarthCanvasVisible && <EarthCanvas />}
+        </div>
       </motion.div>
-      <div className="absolute top-[550px] w-full flex justify-center items-center">
+      <div className="absolute top-[430px] w-full flex justify-center items-center">
         <div className="w-[64px] h-[35px] rounded-3xl border-4 border-[#ffff44] flex justify-center items-start p-2">
           <motion.div
             animate={{

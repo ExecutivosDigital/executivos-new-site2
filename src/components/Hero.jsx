@@ -1,9 +1,36 @@
-import React from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { styles } from '../styles';
 import { ComputersCanvas } from './canvas';
 
 const Hero = ({ mainText, subText }) => {
+  const [isComputersCanvasVisible, setIsComputersCanvasVisible] = useState(false);
+
+  const computersCanvasRef = useRef(null);
+
+  const handleIntersection = (entries) => {
+    const [entry] = entries;
+    setIsComputersCanvasVisible(entry.isIntersecting);
+  };
+
+  useEffect(() => {
+    const options = {
+      root: null,
+      rootMargin: "0px",
+      threshold: 0.5, // Ajuste conforme necessário
+    };
+
+    const observer = new IntersectionObserver(handleIntersection, options);
+
+    if (computersCanvasRef.current) {
+      observer.observe(computersCanvasRef.current);
+    }
+
+    return () => {
+      observer.disconnect();
+    };
+  }, []);
+
   return (
     <section className={`relative w-full h-full mx-auto`}>
       <div className={`relative inset-0 top-[100px] h-[35vh] max-w-7xl mx-auto ${styles.paddingX} flex flex-row items-start gap-8`}>
@@ -23,10 +50,18 @@ const Hero = ({ mainText, subText }) => {
         </div>
       </div>
       <div className={'w-full h-[500px] flex justify-center items-center'}>
-        <ComputersCanvas />
+        <div ref={computersCanvasRef} className={'w-full h-[500px] flex justify-center items-center'}>
+        <motion.div
+          className={'w-full h-[500px] flex justify-center items-center'}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: isComputersCanvasVisible ? 1 : 0 }}
+            transition={{ duration: 2 }}
+          >
+            {isComputersCanvasVisible && <ComputersCanvas />}
+          </motion.div>
+        </div>
       </div>
       <div className='absolute xs:bottom-1 bottom-10 w-full flex justify-center items-center ' style={{ flexDirection: 'column' }}>
-
         <div className='w-[64px] h-[35px] rounded-3xl border-4 border-[#ffff44] flex justify-center items-start p-2'>
           <motion.div
             animate={{
@@ -42,7 +77,6 @@ const Hero = ({ mainText, subText }) => {
 
         </div>
         <h1 style={{ color: '#ffff44', fontWeight: 600 }}>Tente Mover o Computador</h1>
-
       </div>
     </section>
   );
