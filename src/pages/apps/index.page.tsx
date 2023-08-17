@@ -1,13 +1,12 @@
-import React from "react";
-import Navbar from "../../components/Navbar";
-import Hero from "../../components/Hero";
-import About from "../../components/About";
-import Experience from "../../components/Experience";
-import Works from "../../components/Works";
-import FeedBacks from "../../components/FeedBacks";
-import Contact from "../../components/Contact";
-import StarsCanvas from "../../components/canvas/Stars";
 import { Element } from "react-scroll"; // Importe o Element do react-scroll
+import About from "../../components/About";
+import Contact from "../../components/Contact";
+import Experience from "../../components/Experience";
+import FeedBacks from "../../components/FeedBacks";
+import Hero from "../../components/Hero";
+import Navbar from "../../components/Navbar";
+import Works from "../../components/Works";
+import StarsCanvas from "../../components/canvas/Stars";
 
 export default function App() {
   const site = "https://www.example.com";
@@ -22,17 +21,24 @@ export default function App() {
         width: "100vw",
       }}
     >
-      <div className='bg-hero-pattern bg-cover bg-no-repeat bg-center'>
+      <div className="bg-hero-pattern bg-cover bg-no-repeat bg-center">
         <Navbar />
       </div>
       <div style={{ padding: "30px" }}>
-        <Hero mainText='Somos' subText='Especialistas em Aplicativos'/>
-        <div style={{width: '80vw' ,display: 'flex', justifyContent: 'center',alignItems:'center'}}> 
-        <img
-          src={'/logoFull.svg'}
-          alt='web-development'
-          className='w-[300px] h-[100px]'
-        />
+        <Hero mainText="Somos" subText="Especialistas em Aplicativos" />
+        <div
+          style={{
+            width: "80vw",
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+          }}
+        >
+          <img
+            src={"/logoFull.svg"}
+            alt="web-development"
+            className="w-[300px] h-[100px]"
+          />
         </div>
         <Element name="sobre">
           <About />
@@ -42,8 +48,8 @@ export default function App() {
           <Works />
         </Element>
         <FeedBacks />
-          <div className='relative z-0'>
-            <Contact site='App' />
+        <div className="relative z-0">
+          <Contact site="App" />
           <StarsCanvas />
         </div>
       </div>
