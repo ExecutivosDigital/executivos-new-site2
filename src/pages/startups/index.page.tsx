@@ -28,8 +28,9 @@ export default function Startups() {
         <Hero mainText="Criamos" subText="Sua Startup" />
         <div
           style={{
-            width: "80vw",
+            width: "100%",
             display: "flex",
+            alignSelf: "center",
             justifyContent: "center",
             alignItems: "center",
           }}
@@ -37,7 +38,7 @@ export default function Startups() {
           <img
             src={"/logoFull.svg"}
             alt="web-development"
-            className="w-[300px] h-[100px]"
+            style={{ width: "80%", height: "200px", alignSelf: "center" }}
           />
         </div>
         <Element name="sobre">
