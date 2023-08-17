@@ -1,0 +1,52 @@
+{
+    "asset": {
+        "version": "2.0",
+        "generator": "Open Asset Import Library (assimp v5.0.cd42b995)"
+    },
+    "extensionsUsed": [
+        "FB_ngon_encoding"
+    ],
+    "buffers": [
+        {
+            "byteLength": 0,
+            "uri": "result.bin"
+        }
+    ],
+    "nodes": [
+        {
+            "name": "RootNode",
+            "children": [
+                1
+            ]
+        },
+        {
+            "name": "google-37",
+            "children": [
+                2,
+                3,
+                4,
+                5
+            ]
+        },
+        {
+            "name": "Path"
+        },
+        {
+            "name": "Path_node"
+        },
+        {
+            "name": "Path_node_0"
+        },
+        {
+            "name": "Path_node_1"
+        }
+    ],
+    "scenes": [
+        {
+            "nodes": [
+                0
+            ]
+        }
+    ],
+    "scene": 0
+}
