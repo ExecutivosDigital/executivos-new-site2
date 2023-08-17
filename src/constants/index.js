@@ -144,7 +144,7 @@ const experiences = [
   {
     title: "Inteligência Artificial",
     company_name: "TrueLife IA,, Empresa de Inteligência Artificial que é parceira da Executivo's Digital. A Truelife IA confia em nós para desenvolvermos as Aplicações demandadas pelos seus clientes e a própria empresa. A Truelife IA trabalha com:",
-    icon: './logoTL.svg',
+    icon: './logoTl1.png',
     iconBg: "#e8e8e8",
     date: "Setembro de 2022 - Agosto de 2023",
     points: [
