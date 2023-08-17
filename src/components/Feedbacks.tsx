@@ -1,7 +1,6 @@
 import { motion } from "framer-motion";
 
 import { testimonials } from "../constants";
-import { SectionWrapper } from "../hoc";
 import { styles } from "../styles";
 import { fadeIn, textVariant } from "../utils/motion";
 
@@ -12,7 +11,7 @@ const FeedbackCard = ({
   designation,
   company,
   image,
-}) => (
+}: any) => (
   <motion.div
     variants={fadeIn("", "spring", index * 0.5, 0.75)}
     className="bg-[#000] p-10 rounded-3xl xs:w-[320px] w-full "
@@ -62,5 +61,3 @@ export const Feedbacks = () => {
     </div>
   );
 };
-
-export default SectionWrapper(Feedbacks, "");
