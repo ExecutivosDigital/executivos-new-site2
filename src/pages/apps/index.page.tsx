@@ -1,8 +1,8 @@
+import { Feedbacks } from "@/components/FeedBacks";
 import { Element } from "react-scroll"; // Importe o Element do react-scroll
 import About from "../../components/About";
 import Contact from "../../components/Contact";
 import Experience from "../../components/Experience";
-import FeedBacks from "../../components/FeedBacks";
 import Hero from "../../components/Hero";
 import Navbar from "../../components/Navbar";
 import Works from "../../components/Works";
@@ -47,7 +47,7 @@ export default function App() {
         <Element name="projetos">
           <Works />
         </Element>
-        <FeedBacks />
+        <Feedbacks />
         <div className="relative z-0">
           <Contact site="App" />
           <StarsCanvas />
