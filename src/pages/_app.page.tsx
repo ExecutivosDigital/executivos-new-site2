@@ -17,7 +17,16 @@ function MyApp({ Component, pageProps }: any) {
         <Head>
         <meta charSet="utf-8" />
         <title>Executivo's Digital</title>
-        <link rel="canonical" href="" /> 
+        <link rel="canonical" href="" />
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-E5BHR0PGS3"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag()
+          dataLayer.push(arguments)
+          gtag('js', new Date());
+
+          gtag('config', 'G-E5BHR0PGS3');
+        </script> 
         </Head>
       
         <GlobalStyle />
