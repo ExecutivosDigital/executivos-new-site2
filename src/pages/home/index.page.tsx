@@ -25,7 +25,7 @@ export default function Home() {
         <Navbar />
       </div>
       <div style={{ padding: "20px" }}>
-        <Hero mainText="Somos" subText="Executivos Digital" />
+        <Hero mainText="Somos" subText="Executivo's Digital" />
         <div
           style={{
             width: "100%",
