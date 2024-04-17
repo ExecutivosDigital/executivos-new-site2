@@ -44,19 +44,19 @@ export const navLinks = [
 const services = [
   {
     title: "Desenvolvimento Web",
-    icon: './WebDeveloping.png',
+    icon: "./WebDeveloping.png",
   },
   {
     title: "Desenvolvimento de Aplicativos",
-    icon: './mobileAppDeveloping.png',
+    icon: "./mobileAppDeveloping.png",
   },
   {
     title: "Inteligência Artificial",
-    icon: './InteligênciaArtificial.png',
+    icon: "./InteligênciaArtificial.png",
   },
   {
     title: "Startup / SaaS",
-    icon: './SSAAS_Startps.png',
+    icon: "./SSAAS_Startps.png",
   },
 ];
 
@@ -118,33 +118,36 @@ const technologies = [
 const experiences = [
   {
     title: "Desenvolvimento de Soluções",
-    company_name: "Earth Tech \n Nossa Equipe foi iniciada dentro de uma Empresa chamada Earth Technollogy 🌎 empresa que desenvolvia Projetos para:",
-    icon: './logoEarthTech.png',
+    company_name:
+      "Earth Tech \n Nossa Equipe foi iniciada dentro de uma Empresa chamada Earth Technollogy 🌎 empresa que desenvolvia Projetos para:",
+    icon: "./logoEarthTech.png",
     iconBg: "#2e266d",
     date: "Janeiro de 2018 - Dezembro de 2020",
     points: [
-      ' Governos, Prefeituras e afins',
-      ' Empresas Privadas',
-      ' Startups',
-      ' Soluções Específicas'
+      " Governos, Prefeituras e afins",
+      " Empresas Privadas",
+      " Startups",
+      " Soluções Específicas",
     ],
   },
   {
     title: "Criação de Projetos",
-    company_name: "Executivo's Digital 💛🖤  Software House com foco em execução de Projetos com Impacto e Qualidade🧑🏻‍💻",
-    icon: './logoEx.png',
+    company_name:
+      "Executivo's Digital 💛🖤  Software House com foco em execução de Projetos com Impacto e Qualidade🧑🏻‍💻",
+    icon: "./miniLogo.png",
     iconBg: "#000",
     date: "Dezembro de 2020 - Agosto de 2023",
     points: [
-      '🌐 + de 1.000.000 de Linhas de Códigos Escritas',
-      '💰 + 700 Mil Transacionado Pelos nossos Clientes',
-      '🤳🏻 + 6.000 Clientes Impactados'
+      "🌐 + de 1.000.000 de Linhas de Códigos Escritas",
+      "💰 + 700 Mil Transacionado Pelos nossos Clientes",
+      "🤳🏻 + 6.000 Clientes Impactados",
     ],
   },
   {
     title: "Inteligência Artificial",
-    company_name: "TrueLife IA,, Empresa de Inteligência Artificial que é parceira da Executivo's Digital. A Truelife IA confia em nós para desenvolvermos as Aplicações demandadas pelos seus clientes e a própria empresa. A Truelife IA trabalha com:",
-    icon: './logoTl1.png',
+    company_name:
+      "TrueLife IA,, Empresa de Inteligência Artificial que é parceira da Executivo's Digital. A Truelife IA confia em nós para desenvolvermos as Aplicações demandadas pelos seus clientes e a própria empresa. A Truelife IA trabalha com:",
+    icon: "./logoTl1.png",
     iconBg: "#e8e8e8",
     date: "Setembro de 2022 - Agosto de 2023",
     points: [
@@ -201,7 +204,7 @@ const projects = [
         color: "pink-text-gradient",
       },
     ],
-    image: './17.png',
+    image: "./17.png",
     source_code_link: "https://github.com/",
   },
   {
@@ -222,7 +225,7 @@ const projects = [
         color: "pink-text-gradient",
       },
     ],
-    image: './18.png',
+    image: "./18.png",
     source_code_link: "https://github.com/",
   },
   {
@@ -243,7 +246,7 @@ const projects = [
         color: "pink-text-gradient",
       },
     ],
-    image: './19.png',
+    image: "./19.png",
     source_code_link: "https://github.com/",
   },
 ];

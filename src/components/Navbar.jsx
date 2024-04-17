@@ -51,9 +51,9 @@ const Navbar = () => {
         scrolled ? "background-navbar" : "bg-transparent"
       }`}
     >
-      <div className='w-full h-0.5 flex justify-between items-center max-w-7xl mx-auto'>
-        <img src={'./logoFull.svg'} alt='logoGit' className='w-30 h-12 ' />
-        <ul className='list-none hidden sm:flex flex-row gap-10 '>
+      <div className="w-full h-0.5 flex justify-between items-center max-w-7xl mx-auto">
+        <img src={"./miniLogo.png"} alt="logoGit" className="w-20 mt-1 h-10 " />
+        <ul className="list-none hidden sm:flex flex-row gap-10 ">
           {navLinks.map((nav) => (
             <li
               key={nav.id}
@@ -63,7 +63,6 @@ const Navbar = () => {
               onClick={() => setActive(nav.title)}
             >
               <ScrollLink
-                
                 to={nav.id.toLowerCase()}
                 spy={true}
                 smooth={true}
@@ -76,11 +75,11 @@ const Navbar = () => {
           ))}
         </ul>
         {/* Toggle button for mobile menu */}
-        <div className='sm:hidden flex flex-1 justify-end items-center'>
+        <div className="sm:hidden flex flex-1 justify-end items-center">
           <img
-            src={toggle ? '/close.svg' : '/menu.svg'}
-            alt='menu'
-            className='w-[28px] h-[28px] object-contain'
+            src={toggle ? "/close.svg" : "/menu.svg"}
+            alt="menu"
+            className="w-[28px] h-[28px] object-contain"
             onClick={() => setToggle(!toggle)}
           />
 
@@ -89,7 +88,7 @@ const Navbar = () => {
               !toggle ? "slide-out " : "slide-in"
             } p-6 navbar-gradient absolute top-10 right-[-20px] mx-4 my-2 min-w-[140px] z-10  rounded-bl-xl rounded-br-xl`}
           >
-            <ul className='list-none flex justify-end items-start flex-1 flex-col gap-4'>
+            <ul className="list-none flex justify-end items-start flex-1 flex-col gap-4">
               {navLinks.map((nav) => (
                 <li
                   key={nav.id}
@@ -101,19 +100,19 @@ const Navbar = () => {
                     setActive(nav.title);
                   }}
                 >
-              <ScrollLink
-                to={nav.id.toLowerCase()}
-                spy={true}
-                smooth={true}
-                offset={-70}
-                duration={500}
-              >
-                {nav.title}
-              </ScrollLink>
-            </li>
-          ))}
-        </ul>
-        </div>
+                  <ScrollLink
+                    to={nav.id.toLowerCase()}
+                    spy={true}
+                    smooth={true}
+                    offset={-70}
+                    duration={500}
+                  >
+                    {nav.title}
+                  </ScrollLink>
+                </li>
+              ))}
+            </ul>
+          </div>
         </div>
       </div>
     </nav>

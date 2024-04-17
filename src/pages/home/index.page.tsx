@@ -36,9 +36,14 @@ export default function Home() {
           }}
         >
           <img
-            src={"/logoFull.svg"}
+            src={"/logoFull.png"}
             alt="web-development"
-            style={{ width: "80%", height: "200px", alignSelf: "center" }}
+            style={{
+              width: "60%",
+              height: "200px",
+              marginTop: "50px",
+              alignSelf: "center",
+            }}
           />
         </div>
         <Element name="sobre">

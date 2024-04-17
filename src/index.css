@@ -1,6 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap");
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=League+Spartan:wght@400;700&display=swap');
-
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=League+Spartan:wght@400;700&display=swap");
 
 @tailwind base;
 @tailwind components;
@@ -10,28 +9,24 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family:  'league spartan';
+  font-family: "league spartan";
   scroll-behavior: smooth;
   color-scheme: dark;
 }
 .background-primary {
   background: #282828;
-  
 }
 .background-black {
   background: #000;
-  
 }
 .background-navbar {
   background: #282828;
-  
 }
 .background-secondary {
-  background: #ffff44;
-  
+  background: #ffd369;
 }
 .primary-color {
-  color: #ffff44;
+  color: #ffd369;
 }
 .hash-span {
   margin-top: -100px;
@@ -54,16 +49,16 @@
 }
 .navbar-gradient {
   background: #000000;
-  border:1px solid white; /* fallback for old browsers */
+  border: 1px solid white; /* fallback for old browsers */
   background: -webkit-linear-gradient(
     to left,
-    #282828, 
-    #ffff44  
+    #282828,
+    #ffd369
   ); /* Chrome 10-25, Safari 5.1-6 */
   background: linear-gradient(
     to top,
-    #000 , 
-    #282828  
+    #000,
+    #282828
   ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 @keyframes slideIn {
@@ -84,7 +79,6 @@
     visibility: visible;
   }
   to {
-    
     opacity: 0;
     visibility: hidden;
   }
@@ -92,29 +86,29 @@
 
 /* Adicione essa classe ao menu para a animação de entrada */
 .slide-in {
-  animation: slideIn 0.3s  forwards;
+  animation: slideIn 0.3s forwards;
 }
 
 /* Adicione essa classe ao menu para a animação de saída */
 .slide-out {
-  animation: slideOut 0.3s  forwards;
+  animation: slideOut 0.3s forwards;
 }
 
 .violet-gradient {
-  background: #ffff44;
-  background: linear-gradient(-90deg, #ffff44 0%, rgba(60, 51, 80, 0) 100%);
+  background: #ffd369;
+  background: linear-gradient(-90deg, #ffd369 0%, rgba(60, 51, 80, 0) 100%);
   background: -webkit-linear-gradient(
     -90deg,
-    #ffff44 0%,
+    #ffd369 0%,
     rgba(60, 51, 80, 0) 100%
   );
 }
 .yellow-gradient {
-  background: #ffff44;
-  background: linear-gradient(-90deg, #ffff44 0%, rgba(80, 79, 51, 0) 100%);
+  background: #ffd369;
+  background: linear-gradient(-90deg, #ffd369 0%, rgba(80, 79, 51, 0) 100%);
   background: -webkit-linear-gradient(
     -90deg,
-    #ffff44 0%,
+    #ffd369 0%,
     rgba(60, 51, 80, 0) 100%
   );
 }
@@ -126,13 +120,18 @@
 }
 .orange-white-gradient {
   background: "#d78900";
-  background: linear-gradient(90.13deg,  #d78900 5.5%,#000 90.3%, #d78900 5.2%);
-  background: -webkit-linear-gradient(-90.13deg, #b0750e 5.5%,#ffa202 90.3%, #feb12b 5.2%);
+  background: linear-gradient(90.13deg, #d78900 5.5%, #000 90.3%, #d78900 5.2%);
+  background: -webkit-linear-gradient(
+    -90.13deg,
+    #b0750e 5.5%,
+    #ffa202 90.3%,
+    #feb12b 5.2%
+  );
 }
 .yellow-pink-gradient {
   background: "#fff";
-  background: linear-gradient(90.13deg, #fff 1.9%, #ffff44 97.5%);
-  background: -webkit-linear-gradient(-90.13deg, #fff 1.9%, #ffff44 97.5%);
+  background: linear-gradient(90.13deg, #fff 1.9%, #ffd369 97.5%);
+  background: -webkit-linear-gradient(-90.13deg, #fff 1.9%, #ffd369 97.5%);
 }
 
 .orange-text-gradient {
