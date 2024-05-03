@@ -36,14 +36,9 @@ export default function Home() {
           }}
         >
           <img
-            src={"/logoFull.png"}
+            src={"/logoGoldAndWhite.png"}
             alt="web-development"
-            style={{
-              width: "60%",
-              height: "200px",
-              marginTop: "50px",
-              alignSelf: "center",
-            }}
+            className=" md:w-auto mt-12 self-center md:h-[180px] md:mb-0 mb-5"
           />
         </div>
         <Element name="sobre">

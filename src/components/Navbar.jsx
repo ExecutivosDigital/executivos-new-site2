@@ -47,12 +47,16 @@ const Navbar = () => {
     <nav
       className={`${
         styles.paddingX
-      } w-full h-0.5 flex items-center py-4 fixed top-0 z-20 ${
+      } w-full  flex items-center py-[24px] md:py-[26px] fixed top-0 z-20 ${
         scrolled ? "background-navbar" : "bg-transparent"
       }`}
     >
       <div className="w-full h-0.5 flex justify-between items-center max-w-7xl mx-auto">
-        <img src={"./miniLogo.png"} alt="logoGit" className="w-20 mt-1 h-10 " />
+        <img
+          src={"./logoCerta.png"}
+          alt="logoGit"
+          className="  object-cover   h-8 md:h-10 "
+        />
         <ul className="list-none hidden sm:flex flex-row gap-10 ">
           {navLinks.map((nav) => (
             <li
